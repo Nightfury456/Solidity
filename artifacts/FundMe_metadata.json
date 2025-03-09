@@ -13,10 +13,22 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
+					}
+				],
 				"name": "getCOnversionRate",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -82,11 +94,11 @@
 			]
 		},
 		"FundMe.sol": {
-			"keccak256": "0x055c8787c1f6d082d0601d695b2f27faf9d915500481b66b6af1bc016e1c8471",
+			"keccak256": "0x78abfad3c2134ab7e5e044abfe12773ec2b795189ba892d50d8796ba81afc2ce",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://10b0d4bb6ff629449eba0d7c08bdfc17f7409f097a4d7f32770c35897dccb88a",
-				"dweb:/ipfs/QmTHMsqGDGxozZqNbdU3qYCGWMVvpukw5kvf76y58Sv8ei"
+				"bzz-raw://1f4414f7982d1ed094409f706a2efe23e224b7a139ca7bac0eaa41e3b0e39914",
+				"dweb:/ipfs/QmX3J8QW5tPD3cMUr6HxqLtmX9tUsKxpAAX8cJuUzYjkxT"
 			]
 		}
 	},

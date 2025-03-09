@@ -6,13 +6,13 @@ import { AggregatorV3Interface } from "@chainlink/contracts/src/v0.8/shared/inte
 
 contract FundMe {
 
-    uint256 public minimumUsd = 5;
+    uint256 public minimumUsd = 5e18;
 
     function fund() public payable {
         // allow users to send $
         // have a minimum 5$ sent
         // How do we send ETH to this contract?
-        require(msg.value >= minimumUsd, "Didn't send the correct amount of ETH");
+        require(getCOnversionRate(msg.value) >= minimumUsd, "Didn't send the correct amount of ETH");
     }
 
     // function withdraw() public {}
@@ -25,5 +25,12 @@ contract FundMe {
         // price of ETH in terms of USD
         return uint256(price * 1e10);
     }
-    function getCOnversionRate() public {}
+    function getCOnversionRate(uint256 ethAmount) public view returns(uint256) {
+        // 1 ETH?
+        // 2000_000000000000000000
+        uint256 ethPrice = getPrice();
+        // (2000_000000000000000000 * 1_000000000000000000) / 1e18;
+        uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1e18;
+        return ethAmountInUsd;
+    }
 }
