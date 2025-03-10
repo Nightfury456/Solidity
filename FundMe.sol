@@ -15,7 +15,7 @@ contract FundMe {
         // allow users to send $
         // have a minimum 5$ sent
         // How do we send ETH to this contract?
-        require(getCOnversionRate(msg.value) >= minimumUsd, "Didn't send the correct amount of ETH");
+        require(getConversionRate(msg.value) >= minimumUsd, "Didn't send the correct amount of ETH");
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
     }
@@ -30,7 +30,7 @@ contract FundMe {
         // price of ETH in terms of USD
         return uint256(price * 1e10);
     }
-    function getCOnversionRate(uint256 ethAmount) public view returns(uint256) {
+    function getConversionRate(uint256 ethAmount) public view returns(uint256) {
         // 1 ETH?
         // 2000_000000000000000000
         uint256 ethPrice = getPrice();
